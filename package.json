@@ -1,0 +1,17 @@
+{
+  "name": "websnap",
+  "description": "take screenshots from static websites",
+  "version": "0.0.1",
+  "author": "Víctor Martínez",
+  "license": "MIT",
+  "bin": {
+    "websnap": "index.js"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.11",
+    "http-server": "^14.1.0",
+    "puppeteer": "^13.6.0",
+    "puppeteer-cluster": "^0.23.0",
+    "yargs": "^17.4.1"
+  }
+}
