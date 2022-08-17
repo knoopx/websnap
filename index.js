@@ -27,9 +27,12 @@ const EMULATE = {
   mobile: puppeteer.devices["Pixel 5"],
 }
 
+const getCDPClient = (page) =>
+  typeof page._client === "function" ? page._client() : page._client
+
 async function snapshot(page, url, baseName, { device, extension, media }) {
   await page.emulate(device.config)
-  await page._client.send("Emulation.setEmulatedMedia", {
+  await getCDPClient(page).send("Emulation.setEmulatedMedia", {
     media,
   })
 
